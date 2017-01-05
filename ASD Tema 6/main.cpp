@@ -6,10 +6,26 @@
 //  Copyright © 2017 University of Bucharest - Marius Ilie. All rights reserved.
 //
 
-#include <iostream>
+#include "OperationalQueue.h"
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+#pragma mark COADA
+    
+    OperationalQueue<double> coada = *new OperationalQueue<double>();
+    
+    coada.push(1, -2.4);
+    coada.push(2, 2);
+    coada.push(1, 3);
+    coada.push(1, 1.2);
+    coada.push(2, 2.1);
+    coada.push(3, 8);
+    coada.push(2, 3.7);
+    coada.push(1, 74);
+    
+    coada.afiseaza();
+    
+    while(coada.pop().isSet());
+    cout << "\n\n";
+    
     return 0;
 }
